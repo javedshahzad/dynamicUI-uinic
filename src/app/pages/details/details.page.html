@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button slot="start" color="light" (click)="back()">
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-button>
+    <ion-title>Details</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card mode="ios">
+    <img [src]="item?.image_url" />
+     
+    <ion-card-header>
+      <ion-card-subtitle [innerHTML]="item?.title"></ion-card-subtitle>
+      <ion-skeleton-text *ngIf="!item?.title" animated ></ion-skeleton-text>
+      <ion-card-title [innerHTML]="item?.heading"></ion-card-title>
+      <ion-skeleton-text *ngIf="!item?.heading" animated ></ion-skeleton-text>
+    </ion-card-header>
+    <ion-card-content>
+      <div [innerHTML]="item?.body"></div>
+      <ion-skeleton-text *ngIf="!item?.body" animated ></ion-skeleton-text>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button color="secondary" (click)="addnew()">
+    Add new
+  </ion-button>
+  <ion-item lines="none" *ngIf="!uidata">
+    <ion-thumbnail slot="start">
+      <ion-skeleton-text animated></ion-skeleton-text>
+    </ion-thumbnail>
+    <ion-label>
+      <h3>
+        <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+      </h3>
+      <p>
+        <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+      </p>
+      <p>
+        <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+      </p>
+    </ion-label>
+  </ion-item>
+  <ion-card *ngFor="let item of uidata" mode="ios">
+    <img src="assets/img/madison.jpg" />
+     
+    <ion-card-header>
+      <ion-card-subtitle [innerHTML]="item?.title"></ion-card-subtitle>
+      <ion-skeleton-text *ngIf="!item?.title" animated ></ion-skeleton-text>
+      <ion-card-title [innerHTML]="item?.heading"></ion-card-title>
+      <ion-skeleton-text *ngIf="!item?.heading" animated ></ion-skeleton-text>
+    </ion-card-header>
+    <ion-card-content>
+      <div [innerHTML]="item?.body"></div>
+      <ion-skeleton-text *ngIf="!item?.body" animated ></ion-skeleton-text>
+      <ion-item lines="none">
+        <ion-button color="secondary" slot="start" (click)="update(item)">
+          Update
+        </ion-button>
+        <ion-button color="primary" slot="end" (click)="details(item?.id)">
+          Details
+        </ion-button>
+        <ion-button color="danger" slot="end" (click)="delete(item?.id)">
+          Delete
+          <ion-icon name="trash"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

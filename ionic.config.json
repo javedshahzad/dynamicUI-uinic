@@ -1,0 +1,7 @@
+{
+  "name": "headup",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

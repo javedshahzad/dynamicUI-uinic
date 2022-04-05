@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Update</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="stacked">Title</ion-label>
+    <ion-input type="text" name="title" [(ngModel)]="data.title"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Heading</ion-label>
+    <ion-input  type="text" name="heading" [(ngModel)]="data.heading"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Body</ion-label>
+    <ion-input  type="text" name="body" [(ngModel)]="data.body"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Icon name</ion-label>
+    <ion-input  type="text" name="icon" [(ngModel)]="data.icon"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Class name</ion-label>
+    <ion-input  type="text" name="class_name" [(ngModel)]="data.class_name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Id Name</ion-label>
+    <ion-input  type="text" name="id_name" [(ngModel)]="data.id_name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Image URL</ion-label>
+    <ion-input type="text" name="image_url" [(ngModel)]="data.image_url"></ion-input>
+  </ion-item>
+  <ion-button expand="block" color="secondary" (click)="updatedata()">Update</ion-button>
+</ion-content>
